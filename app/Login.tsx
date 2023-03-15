@@ -26,7 +26,7 @@ export default function Login(){
     }else{
         return (
             <>
-                <button onClick={()=>signIn()} type="button" className="bg-violet-500 p-3 font-bold text-white w-3/4 mx-auto rounded-md hover:bg-zinc-200 hover:text-blue-500 text-2xl mb-5 ease-in-out duration-300">SignIn With Google</button>
+                <button onClick={()=>signIn('google', { callbackUrl: 'http://localhost:3000/dashboard'})} type="button" className="bg-violet-500 p-3 font-bold text-white w-3/4 mx-auto rounded-md hover:bg-zinc-200 hover:text-blue-500 text-2xl mb-5 ease-in-out duration-300">SignIn With Google</button>
             </>
         )
     }
