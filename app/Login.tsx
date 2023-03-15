@@ -18,7 +18,7 @@ export default function Login(){
                 <button onClick={()=>{
                     signOut()
                     
-                    }} type="button">Signout Of Google</button>
+                    }} type="button" >Signout Of Google</button>
                 {/*Pass session info to the server component */}
                 <UserCard user={session?.user}/>
             </>
@@ -26,7 +26,7 @@ export default function Login(){
     }else{
         return (
             <>
-                <button onClick={()=>signIn()} type="button">Sign In With Google</button>
+                <button onClick={()=>signIn()} type="button" className="bg-violet-500 p-3 font-bold text-white w-3/4 mx-auto rounded-md hover:bg-slate-200 hover:text-blue-500 text-2xl mb-5">SignIn With Google</button>
             </>
         )
     }
