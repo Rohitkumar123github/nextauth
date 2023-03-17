@@ -11,6 +11,8 @@ export default function UserCard({user}:{user: DefaultSession["user"]}) {
         {/* <p>Currentuser</p> */}
         <h4 className='font-bold'>{user?.name}</h4>
         {/* <p>{user?.email}</p> */}
+        {/* <Link href={"/api/auth/login"}>Login</Link> */}
+        {/* <Link href={"/api/auth/login"}></Link> */}
         
         <Link href={"/dashboard"}>
           {/* doubt if in src ={user?.image || " "}->showing error in app

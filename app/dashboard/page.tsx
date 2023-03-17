@@ -5,6 +5,7 @@
 // import UserCard from "../UserCard";
 import FileInput from "../components/FileInput";
 import Header from "../components/Header";
+import Hero from "../components/Hero";
 
 
 export default function Dashboard(){
@@ -18,6 +19,7 @@ export default function Dashboard(){
         return (
             <>  
                 <Header/>
+                <Hero/>
                 <FileInput/>
                 {/* <h1>Logout</h1>
                 <button onClick={()=>{
