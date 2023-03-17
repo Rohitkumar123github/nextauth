@@ -13,7 +13,9 @@ export default function UserCard({user}:{user: DefaultSession["user"]}) {
         {/* <p>{user?.email}</p> */}
         
         <Link href={"/dashboard"}>
-          <Image src={user?.image || " "} width={34} height={34} alt="userprofile" className='rounded-full'/>
+          {/* doubt if in src ={user?.image || " "}->showing error in app
+                if in src ={user?.image}->showing error in program code */}
+          <Image src={user?.image} width={34} height={34} alt="userprofile" className='rounded-full' priority/>
         </Link>
     </div>
   )

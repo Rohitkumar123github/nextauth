@@ -1,22 +1,24 @@
-'use client'
+// 'use client'
 //useSession is a react context hook i.e why using 'use client'
-import { useSession, signIn, signOut } from "next-auth/react";
+// import { useSession, signIn, signOut } from "next-auth/react";
 // import { useRouter } from "next/navigation";
-import UserCard from "../UserCard";
+// import UserCard from "../UserCard";
+import FileInput from "../components/FileInput";
 import Header from "../components/Header";
 
 
 export default function Dashboard(){
     //get session from netAuth
-    const {data: session} = useSession()
-    console.log(session)
+    // const {data: session} = useSession()
+    // console.log(session)
     // const router = useRouter()
 
     //if the user exists -> show a SignOut button and their information
-    if(session){
+    // if(session){
         return (
             <>  
                 <Header/>
+                <FileInput/>
                 {/* <h1>Logout</h1>
                 <button onClick={()=>{
                     signOut({ callbackUrl: 'http://localhost:3000/' })
@@ -37,4 +39,4 @@ export default function Dashboard(){
 
     //if a user doesnot exist -> show a SignIn button
 
-}
+  // }

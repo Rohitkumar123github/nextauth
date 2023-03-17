@@ -1,5 +1,6 @@
+"use client"
 import React from 'react'
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import UserCard from "../UserCard";
 
 export default function Header() {
