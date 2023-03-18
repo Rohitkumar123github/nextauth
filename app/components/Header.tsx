@@ -16,41 +16,42 @@ export default function Header() {
   const { data: session } = useSession()
   console.log(session)
   return (
-      <nav className='flex justify-around py-10 items-center'>
-        <div className='flex items-center gap-4'>
-          <Image src={Hamburger} width={34} height={34} alt="hambergermenu"/>
-          <Image src={Logo} width={34} height={34} alt="VideoManager Logo"/>
-          <h3 className='font-medium text-2xl'>Video Manager</h3>
-        </div>
-        <div className='flex items-center justify-center relative  z-10 w-96'>
-          {/* <input placeholder='Search...' className='absolute left-0 w-96 py-2 px-4 outline-none border-2 border-slate-300 rounded-md'/> */}
+    <nav className='flex justify-between py-3 px-2 items-center sm:py-8 sm:pl-4'>
+      {/* LeftSide - Hamberger and Logo  */}
+      <div className='flex items-center mr-4'>
+        <Image className='text-2xl sm:text-lg sm:mr-6' src={Hamburger} width={34} height={34} alt="hambergermenu" />
+        <Image className='hidden sm:block sm:mr-1 sm:text-red-600' src={Logo} width={34} height={34} alt="VideoManager Logo" />
+        <h3 className='font-extrabold text-xl text-amber-400 sm:text-2xl sm:font-bold '>Video Manager</h3>
+      </div>
+
+      {/* MiddleSide - SearchBar and Icons */}
+      <div className='flex items-center z-10 gap-4'>
+        <div>
+          <input placeholder='Search...' className='left-0 w-96 py-2 px-4 outline-none border-2 border-slate-300 rounded-md hidden sm:block' />
           {/* <Image src={search} width={35} alt="searchIcon" className='absolute right-0 w-12 h-9 z-10 bg-teal-500'/> */}
           {/* <Image src={Rectangle} width={34} height={34} alt="rectangle" className='absolute right-0 w-12 h-12 rounded-full'/> */}
-          <Image src={search}  width={34} height={34} alt="cloudUploadIcon"/>
-          <Image src={cloudIcon}  width={34} height={34} alt="cloudUploadIcon"/>
-          <Image src={group}  width={34} height={34} alt="cloudUploadIcon"/>
-          
         </div>
-        <div>
-
+        <div className='flex gap-4 sm:ml-10'>
+          <Image className='' src={search} width={21} height={21} alt="cloudUploadIcon" />
+          <Image src={cloudIcon} width={21} height={21} alt="cloudUploadIcon" />
+          <Image src={group} width={21} height={21} alt="cloudUploadIcon" />
         </div>
+      </div>
 
-        <div className='flex items-center justify-center gap-10'>
+      {/* RightSide - UserInfo and Logout Button */}
+      <div className='flex items-center justify-center gap-10'>
+         {/*Pass session info to the server component */}
+        <UserCard user={session?.user} />
+
+        {/*Logout */}
+        <button onClick={() => {
+          signOut({ callbackUrl: 'http://localhost:3000/' })
+
+        }} type="button" className='bg-blue-800 text-white py-2 px-5 font-bold rounded-sm hidden sm:visible'>Log Out</button>
 
 
-
-          {/*Pass session info to the server component */}
-          <UserCard user={session?.user} />
-
-          {/*Logout */}
-          <button onClick={() => {
-            signOut({ callbackUrl: 'http://localhost:3000/' })
-
-          }} type="button" className='bg-blue-800 text-white py-2 px-5 font-bold rounded-sm'>Log Out</button>
-
-
-        </div>
-      </nav>
+      </div>
+    </nav>
 
   )
 }
