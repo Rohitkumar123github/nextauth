@@ -18,7 +18,7 @@ export default function Dashboard(){
     // if(session){
         return (
             <>  
-                <Header/>
+                {/* <Header/> */}
                 <Hero/>
                 <FileInput/>
                 {/* <h1>Logout</h1>

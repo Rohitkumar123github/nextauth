@@ -1,3 +1,4 @@
+import Header from './components/Header'
 import './globals.css'
 import ProviderWrapper from './ProviderWrapper'
 
@@ -15,6 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ProviderWrapper>
+          <Header />
         {children}
         </ProviderWrapper>
       </body>

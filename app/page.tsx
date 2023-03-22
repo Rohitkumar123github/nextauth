@@ -1,7 +1,9 @@
 
 import Login from './Login'
+import connectDB from './utils/database/database'
 
-export default function Home() {
+export default async function Home() {
+  await connectDB()
 
   return (
     <main className="container min-h-screen bg-gradient-to-r from-red-500 to-orange-500 mx-auto flex flex-col items-center justify-center">
